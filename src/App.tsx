@@ -1,15 +1,16 @@
-const GITHUB_TOKEN = process.env.REACT_APP_GITHUB_TOKEN
-
-console.log(GITHUB_TOKEN)
+import { ApolloProvider } from '@apollo/client'
+import { client } from './index'
 
 const App = () =>
-  <div>
-    <header>
-      <p className="text-yellow-300">
-        Edit
-        </p>
-    </header>
-  </div>
+  <ApolloProvider client={client}>
+    <div>
+      <header>
+        <p className="text-yellow-300">
+          Edit
+          </p>
+      </header>
+    </div>
+  </ApolloProvider>
 
 
 export default App
