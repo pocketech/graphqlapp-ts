@@ -1,21 +1,24 @@
-import { ApolloProvider } from '@apollo/client'
+import { ApolloProvider, useQuery } from '@apollo/client'
 import { client } from './client'
-import MeData from './graphql'
+import { RepoData, MeData } from './graphql'
 
 
 
-const App = () =>
-  <ApolloProvider client={client}>
-    <div>
-      <header>
-        <p className="text-yellow-300">
-          Hello,GraphQL
+const App = () => {
+  return (
+    <ApolloProvider client={client}>
+      <div>
+        <header>
+          <p className="text-yellow-300">
+            Hello,GraphQL
         </p>
-        <MeData />
-      </header>
-    </div>
-  </ApolloProvider>
-
+          <MeData />
+          <RepoData />
+        </header>
+      </div>
+    </ApolloProvider>
+  )
+}
 
 
 export default App
